@@ -33,27 +33,27 @@ public class RegistrationPage {
     public RegistrationPage fillFirstName(String name) {
         // заполняем поля
         // имя
-        $(firstNameInput).setValue(name);
+        firstNameInput.setValue(name);
         return this;
     }
     public RegistrationPage fillLastName(String secondName) {
         // фамилия
-        $(lastNameInput).setValue(secondName);
+        lastNameInput.setValue(secondName);
         return this;
     }
     public RegistrationPage fillEmail(String email) {
         // адрес электронной почты
-        $(emailInput).setValue(email);
+        emailInput.setValue(email);
         return this;
     }
     public RegistrationPage selectGender(String value) {
         // пол
-        $(gender).find(byText(value)).click();
+        gender.find(byText(value)).click();
         return this;
     }
     public RegistrationPage fillNumber(String number) {
         // номер мобильного телефона
-        $(userNumberInput).setValue(number);
+        userNumberInput.setValue(number);
         return this;
     }
     public RegistrationPage fillDateOfBirth(String day, String month, int year ) {
@@ -65,37 +65,37 @@ public class RegistrationPage {
     }
     public RegistrationPage setSubject(String letter) {
         // предмет
-        $(subjectInput).setValue(letter).pressEnter();
+        subjectInput.setValue(letter).pressEnter();
         return this;
     }
     public RegistrationPage setHobby(String value) {
         // хобби
-        $(hobby).find(byText(value)).click();
+        hobby.find(byText(value)).click();
         return this;
     }
     public RegistrationPage uploadPicture() {
         // загрузить фотографию
-        $(uploadPicture).uploadFile(new File("src//test//resources//girl.jpg"));
+        uploadPicture.uploadFile(new File("src//test//resources//girl.jpg"));
         return this;
     }
     public RegistrationPage fillAddress(String address) {
         // адрес
-        $(currentAddressInput).setValue(address);
+        currentAddressInput.setValue(address);
         return this;
     }
     public RegistrationPage selectState(String value) {
         // штат
-        $(selectState).find(byText(value)).click();
+        selectState.find(byText(value)).click();
         return this;
     }
     public RegistrationPage selectCity(String value) {
         // город
-        $(selectCity).find(byText(value)).click();
+        selectCity.find(byText(value)).click();
         return this;
     }
     public RegistrationPage submitClick() {
         // утверждение
-        $(clickSubmit).click();
+        clickSubmit.click();
         return this;
     }
     public RegistrationPage validate(String label, String value) {
