@@ -11,18 +11,17 @@ import static com.codeborne.selenide.Selenide.open;
 public class RegistrationPage {
 
     public SelenideElement
-             firstName = $("#firstName"),
-             lastName = $("#lastName"),
+             firstNameInput = $("#firstName"),
+             lastNameInput = $("#lastName"),
              emailInput = $("#userEmail"),
              gender = $(byText("Female")),
-             userNumber = $("#userNumber"),
+             userNumberInput = $("#userNumber"),
              subjectInput = $("#subjectInput"),
-             maths = $(byText("Maths")),
              hobby = $(byText("Music")),
              uploadPicture = $("#uploadPicture"),
-             currentAddress = $("#currentAddress"),
-             state = $("#state"),
-             city = $("#city"),
+             currentAddressInput = $("#currentAddress"),
+             selectState = $("#state"),
+             selectCity = $("#city"),
              clickSubmit = $("#submit"),
              responsTable = $(".table-responsive");
 
@@ -34,27 +33,27 @@ public class RegistrationPage {
     public RegistrationPage fillFirstName(String name) {
         // заполняем поля
         // имя
-        $(firstName).setValue(name);
+        $(firstNameInput).setValue(name);
         return this;
     }
     public RegistrationPage fillLastName(String secondName) {
         // фамилия
-        $(lastName).setValue(secondName);
+        $(lastNameInput).setValue(secondName);
         return this;
     }
-    public RegistrationPage fillEmail() {
+    public RegistrationPage fillEmail(String email) {
         // адрес электронной почты
-        $(emailInput).setValue("aidana@gmail.com");
+        $(emailInput).setValue(email);
         return this;
     }
-    public RegistrationPage selectGender() {
+    public RegistrationPage selectGender(String value) {
         // пол
-        $(gender).click();
+        $(gender).find(byText(value)).click();
         return this;
     }
-    public RegistrationPage fillNumber() {
+    public RegistrationPage fillNumber(String number) {
         // номер мобильного телефона
-        $(userNumber).setValue("87776665544");
+        $(userNumberInput).setValue(number);
         return this;
     }
     public RegistrationPage fillDateOfBirth(String day, String month, int year ) {
@@ -64,16 +63,14 @@ public class RegistrationPage {
         $(".react-datepicker__year-select").selectOptionByValue(String.valueOf(year));
         return this;
     }
-    public RegistrationPage setSubject() {
+    public RegistrationPage setSubject(String letter) {
         // предмет
-        $(subjectInput).click();
-        $(maths).sendKeys("Ma");
-        $(byText("Math")).click();
+        $(subjectInput).setValue(letter).pressEnter();
         return this;
     }
-    public RegistrationPage setHobby() {
+    public RegistrationPage setHobby(String value) {
         // хобби
-        $(hobby).click();
+        $(hobby).find(byText(value)).click();
         return this;
     }
     public RegistrationPage uploadPicture() {
@@ -83,19 +80,17 @@ public class RegistrationPage {
     }
     public RegistrationPage fillAddress(String address) {
         // адрес
-        $(currentAddress).setValue(address);
+        $(currentAddressInput).setValue(address);
         return this;
     }
-    public RegistrationPage selectState() {
+    public RegistrationPage selectState(String value) {
         // штат
-        $(state).click();
-        $(byText("NCR")).click();
+        $(selectState).find(byText(value)).click();
         return this;
     }
-    public RegistrationPage selectCity() {
+    public RegistrationPage selectCity(String value) {
         // город
-        $(city).click();
-        $(byText("Delhi")).click();
+        $(selectCity).find(byText(value)).click();
         return this;
     }
     public RegistrationPage submitClick() {
