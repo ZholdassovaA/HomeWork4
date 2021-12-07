@@ -1,20 +1,22 @@
 package lesson4;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ForGit {
-    // тут Нурсултан должен оставить хороший коммент
+
     @Test
+    @DisplayName("Test assertTrue")
     void assertTest() {
-        // тут Нурсултан должен дописать какой то крутой код
-        Assertions.assertTrue(true);
+        // true
+        Assertions.assertEquals(true, 5 > 1);
     }
 
     @Test
+    @DisplayName("Test assertFalse")
     void assertTest2() {
-        // тут тоже
-        Assertions.assertTrue(false);
+        // false
+        Assertions.assertEquals(false, 8 < 6);
     }
-    // молодец, Нурсултан)))
 }
